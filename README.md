@@ -16,7 +16,7 @@ The goal for our project was to use machine learning techniques to predict the l
 
 ## Early Detection of Alzheimer 
 
-First we tried to find out whether any early detection is feasible for Alzheimer / Dimnetia. We had used a Dataset from Kaggle ( https://www.kaggle.com/code/ahmedghobashi/detecting-early-alzheimer-s/input ) to find out which feature can be used to detect early alzheimer. Definitely early detection is better so that , more clinical options can be tried on patients as well as Patient's family can be prepared early if they know patient might have Alzhimer in future. 
+First we tried to find out whether any early detection is feasible for Alzheimer / Dimnetia. We had used a Dataset from [Kaggle]( https://www.kaggle.com/code/ahmedghobashi/detecting-early-alzheimer-s/input ) to find out which feature can be used to detect early alzheimer. Definitely early detection is better so that , more clinical options can be tried on patients as well as Patient's family can be prepared early if they know patient might have Alzhimer in future. 
 We had used Logistic regression Model to find out which patient might have early symptomops of Alzheimer. 
 There are 3 features - Age , MMSE ( Mini Mental State Examination ) and CDR ( Clinical Dementia Rating ) - These 3 features have pretty good correlation with symptomatic Alzheimer ( Demented ) . 
 We had saved the Model and built a simple UI Screen to predit early detection of Alzheimer. 
@@ -31,21 +31,22 @@ UI_Predict.html - HTML Code to give inputs and predict the value.
 
 Next we explored supplementary image processing techniques using a dataset comprised of MRI brain scans. Our objective was to create a Neural Network that could determine if a new image of a MRI scan could lead to the diagnosis of Alzheimer's disease. A total of 3000 images were organized on Google Drive and catagorized into four groups: Moderate Demented, Mild Demented, Very Mild Demented, and Non Demented.  
 
-The MRI dataset of patients diagnosed with Alzheimer's can be found [here.](https://www.frontiersin.org/articles/10.3389/fnins.2018.00777/full)
+The MRI dataset of patients diagnosed with Alzheimer's can be found [here.](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset)
 
-* Image size: approximately 4KB.
+* Images were resized to 224 x 224.
 * Preprocessing and loading of images was done for each category. 
 * Data  was trained, tested, one hot encoded, and a CNN model was created. 
-* Initial accuracy was 50%.
-* After more refinement, acurracy increased to 85%.
+* Initial accuracy was 74%.
 * Considerations: MRI scans can be costly to run. It can be difficult to explain neural networks because there are many parameters.
 
-## Model using EEG data
+## Decision Tree
 
-The EEG data can be found [here](https://openneuro.org/datasets/ds004504/versions/1.0.6) as well as the [article](https://www.mdpi.com/2306-5729/8/6/95) and [Github](https://github.com/OpenNeuroDatasets/ds004504.git) links.
-* Data was comprised of EEG resting state-closed eyes recordings from 88 subjects in total. A total of 36 were diagnosed with Alzheimer’s disease (AD group), 23 were diagnosed with frontotemporal dementia (FTD group), and 29 were cognitive and neuropsychological (CN). The CN state was evaluated by the international Mini-Mental State Examination (MMSE).
-* EEG data is easier to process compared to MRI scans.
-* Considerations: MMSE to determine different groups? Discuss efficacy? 
+Lastly, we used supervised learning to create a decision tree to make predictions based on the outputs of the Logistic Regression Model and the Convolutional Neural Network.
+
+* Tree was trained as a classifier. 
+* Considerations: 
+    * How much does data improve when both model outputs are combined into a decision tree?
+    * MRIs are expensive. Is a model with just a questionnaire accurate enough? 
 
 ## Conclusions
 	
@@ -58,6 +59,6 @@ Obtaining data for this project was difficult because medical data can be heavil
 
 ## Suggestions for the future
 
-Find other datasets and pretrained models to compare model accuracy. Which method is the most accurate? 
+Look at EEGs datasets and other pretrained models to compare model accuracy. Which method works the best? 
 
 
