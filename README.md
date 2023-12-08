@@ -14,39 +14,67 @@ The goal for our project was to use machine learning techniques to predict the l
 4. What tests correlate with the diagnosis of Alzheimer’s according to the DSM?
 
 
-## Early Detection of Alzheimer 
+## Early Detection of Alzheimer's Disease 
 
-First we tried to find out whether any early detection is feasible for Alzheimer / Dimnetia. We had used a Dataset from [Kaggle]( https://www.kaggle.com/code/ahmedghobashi/detecting-early-alzheimer-s/input ) to find out which feature can be used to detect early alzheimer. Definitely early detection is better so that , more clinical options can be tried on patients as well as Patient's family can be prepared early if they know patient might have Alzhimer in future. 
+First, we tried to find out whether any early detection is feasible for Alzheimer / Dimentia. We had used a Dataset from [Kaggle]( https://www.kaggle.com/code/ahmedghobashi/detecting-early-alzheimer-s/input ) to find out which feature can be used to detect early Alzheimer. 
+
+| Feature Descriptions  |
+|---|
+| Subject ID : Subject Identification Number  |
+| MRI ID : MRI Exam Identification Number  |
+| Group : Class of dementia - Nondemented and Demented  |
+| Visit : Nos of Patient vision ( subject ID )  |
+| MR Delay : MR Delay Time  |
+| M/F : Sex  |
+| Hand : Right or left handed  |
+| Age : Age of the subject  |
+| Education : Years of Education  |
+| SES : Socio economic Status ( 1 - 5 )  |
+| MMSE : Mini Mental State Examination  |
+| CDR : Clinical Dementia Rating  |
+| eTIV : Estimated Total Intracranial Volume  |
+|  nWBV : Normalize Whole Brain Volume |
+
+Definitely early detection is better so that, more clinical options can be tried on patients as well as Patient's family can be prepared early if they know patient might have Alzheimer in future. 
 We had used Logistic regression Model to find out which patient might have early symptomops of Alzheimer. 
-There are 3 features - Age , MMSE ( Mini Mental State Examination ) and CDR ( Clinical Dementia Rating ) - These 3 features have pretty good correlation with symptomatic Alzheimer ( Demented ) . 
-We had saved the Model and built a simple UI Screen to predit early detection of Alzheimer. 
-Here is the Modules and description 
-Supervised_RegressionModel_Alzheimer_Logistic regression.ipynb - Doing data fetch , data cleansing and model export
-final_model.pkl - Final Model pkl file 
-column_names.pkl - Input features pkl file
-Flask_api_model_deployment.py - Flask API to predict the model 
+There are 3 features - Age , MMSE ( Mini Mental State Examination ) and CDR ( Clinical Dementia Rating ) - These 3 features have pretty good correlation with symptomatic Alzheimer ( Demented ). We had saved the Model and built a simple UI Screen to predit early detection of Alzheimer. This would be the most cost effective model to run for patient diagnosis. <br>
+
+**Modules and description:**<br>
+Supervised_RegressionModel_Alzheimer_Logistic regression.ipynb - Doing data fetch , data cleansing and model export<br>
+final_model.pkl - Final Model pkl file <br>
+column_names.pkl - Input features pkl file<br>
+Flask_api_model_deployment.py - Flask API to predict the model <br>
 UI_Predict.html - HTML Code to give inputs and predict the value. 
 
 ## Convolutional Neural Network
 
-Next we explored supplementary image processing techniques using a dataset comprised of MRI brain scans. Our objective was to create a Neural Network that could determine if a new image of a MRI scan could lead to the diagnosis of Alzheimer's disease. A total of 3000 images were organized on Google Drive and catagorized into four groups: Moderate Demented, Mild Demented, Very Mild Demented, and Non Demented.  
+Next we explored supplementary image processing techniques using a dataset comprised of MRI brain scans. Our objective was to create a Neural Network that could determine if a new image of a MRI scan could lead to the diagnosis of Alzheimer's disease. A total of 6400 images were organized on Google Drive and catagorized into four groups: Moderate Demented, Mild Demented, Very Mild Demented, and Non Demented.  
 
 The MRI dataset of patients diagnosed with Alzheimer's can be found [here.](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset)
-
+* Request access to [Google Drive folder](https://drive.google.com/drive/folders/1BM7i7OU4pHrukjwFYiMMQL0WyNlAlK0q?usp=drive_link) for images.
 * Images were resized to 224 x 224.
 * Preprocessing and loading of images was done for each category. 
 * Data  was trained, tested, one hot encoded, and a CNN model was created. 
 * Initial accuracy was 74%.
 * Considerations: MRI scans can be costly to run. It can be difficult to explain neural networks because there are many parameters.
 
-## Decision Tree
+## Colored MRI Image Proccessing
 
-Lastly, we used supervised learning to create a decision tree to make predictions based on the outputs of the Logistic Regression Model and the Convolutional Neural Network.
+Lastly, we used supervised learning to process colored images of [MRI scans.](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data)
+The data in two different ways:
+    1. Alzheimer Detection: Whether the patient has the Alzheimer or not (non vs all other categories)
+    2. Alzheimer Classifier: Define what stage the patient is in the Alzheimer.
 
-* Tree was trained as a classifier. 
+The models that are going to be tested:
+* PCA for Alzheimer Detection
+* LDA for Alzheimer Detection
+* SVM for Alzheimer Detection and Alzheimer Classifier
+* CNN for Alzheimer Detection(VGG16) and Alzheimer Classifier(EfficientNetB0)
+
+After evaluating all models, we found that Linear Regression was the most accurate model with an accuracy of 98%.
+
 * Considerations: 
-    * How much does data improve when both model outputs are combined into a decision tree?
-    * MRIs are expensive. Is a model with just a questionnaire accurate enough? 
+    * This is the most expensive model to run.
 
 ## Conclusions
 	
@@ -59,6 +87,8 @@ Obtaining data for this project was difficult because medical data can be heavil
 
 ## Suggestions for the future
 
-Look at EEGs datasets and other pretrained models to compare model accuracy. Which method works the best? 
+Take outputs of the models we created and feed them into a random forest model to see if accuracy improves.
 
+Look at EEGs datasets and other pretrained models to compare model accuracy.
 
+Develop an application enabling users to enter responses from the MMSE (Mini Mental State Examination), with the system generating corresponding suggestions.
