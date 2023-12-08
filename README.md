@@ -3,8 +3,7 @@
 Group Members: Rajib Maji, Hannah Whang, Michael Cariello, Theresa Bravo, Nick O'karma, Stephen Smith, Arame Diasse.
 
 ## Alzheimer Detection and Comparison Between Different Models
-
-The goal for our project was to use machine learning techniques to predict the likelihood of an individual receiving a diagnosis of Alzheimer's disease. Our approach involved utilizing datasets containing medical data and patient details in order to create and train predictive models for patient diagnosis. 
+Our goal aimed to employ machine learning techniques to predict the likelihood of an individual receiving a diagnosis of Alzheimer's disease. Our approach involved utilizing datasets containing medical data and patient details to create and train predictive models for patient diagnosis. By leveraging sophisticated machine learning algorithms, we aspired to develop a tool that could accurately forecast the probability of an individual being diagnosed with Alzheimer's. The core of our methodology lay in the careful curation and utilization of comprehensive datasets, integrating both medical information and patient-specific details. Through this innovative approach, our project sought to contribute to the advancement of predictive analytics in healthcare, particularly in the early diagnosis and intervention of Alzheimer's disease 
 
 ## Questions to Consider:
 
