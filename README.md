@@ -82,8 +82,12 @@ After evaluating all models, we found that Linear Regression was the most accura
 
 ## Difficulties
 
-Obtaining data for this project was difficult because medical data can be heavily restricted due to privacy concerns.
-
+1.Data Privacy and Ethics:
+Dealing with sensitive medical data requires strict adherence to privacy regulations and ethical considerations. Ensuring compliance with data protection laws and obtaining proper consents can be challenging.
+2.Dynamic Nature of Medical Data:
+Medical data is dynamic, and the predictive patterns may change over time. Regular updates and adaptations to the model may be necessary to account for evolving trends and understandings in Alzheimer's diagnosis.
+3.Ethical Use of Predictions:
+Determining how predictions will be used and ensuring ethical implications are considered is essential. Preventing misuse and ensuring responsible deployment of the model is a challenge that requires careful planning
 ## Suggestions for the future
 
 Take outputs of the models we created and feed them into a random forest model to see if accuracy improves.
