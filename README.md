@@ -1,6 +1,6 @@
 # Project 4 - UPenn Data Science Boot Camp
 
-Group Members: Rajib Maji, Hannah Whang, Michael Cariello, Theresa Bravo, Nick O'karma, Stephen Smith, Arame Diasse.
+Group Members: Rajib Maji, Hannah Whang, Michael Cariello, Theresa Bravo, Arame Diasse,Nick O'karma, Stephen Smith.
 
 ## Alzheimer Detection and Comparison Between Different Models
 Our goal aimed to employ machine learning techniques to predict the likelihood of an individual receiving a diagnosis of Alzheimer's disease. Our approach involved utilizing datasets containing medical data and patient details to create and train predictive models for patient diagnosis. By leveraging sophisticated machine learning algorithms, we aspired to develop a tool that could accurately forecast the probability of an individual being diagnosed with Alzheimer's. The core of our methodology lay in the careful curation and utilization of comprehensive datasets, integrating both medical information and patient-specific details. Through this innovative approach, our project sought to contribute to the advancement of predictive analytics in healthcare, particularly in the early diagnosis and intervention of Alzheimer's disease 
@@ -92,8 +92,9 @@ Medical data is dynamic, and the predictive patterns may change over time. Regul
 Determining how predictions will be used and ensuring ethical implications are considered is essential. Preventing misuse and ensuring responsible deployment of the model is a challenge that requires careful planning
 ## Suggestions for the future
 
-Take outputs of the models we created and feed them into a random forest model to see if accuracy improves.
 
-Look at EEGs datasets and other pretrained models to compare model accuracy.
+1.Integrate the outputs of our developed models into a random forest model to assess potential improvements in accuracy.
 
-Develop an application enabling users to enter responses from the MMSE (Mini Mental State Examination), with the system generating corresponding suggestions.
+2.Explore EEG datasets and leverage pretrained models to compare the accuracy of our models against existing benchmarks.
+
+3.Create an application that allows users to input responses from the Mini Mental State Examination (MMSE), with the system generating corresponding suggestions.
