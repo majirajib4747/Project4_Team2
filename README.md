@@ -52,24 +52,21 @@ After analysis and research we tried to find which features have direct correlat
 ### Logistic Regression <br>
 * Testing Score : 0.9333333333333333
 
-Among these models Logistic Regression is best Model. This would be the most cost effective model to run for patient diagnosis in early stages of the disease. Early detection is more desireable so that the patients and their families can be prepared for exploring more potential clinical options. The model is saved with the title "final_model.pkl". Lastly, we had built a simple UI to predict the Alzheimer probality based on the questionnaire. 
+Among these models Logistic Regression is best Model. This would be the most cost effective model to run for patient diagnosis in early stages of the disease. Early detection is more desireable so that the patients and their families can be prepared for exploring more potential clinical options. Lastly, we had built a simple UI to predict the Alzheimer probality based on the questionnaire. 
 
-**Modules and description:**<br>
+## How to run the model:<br>
 
-Supervised_RegressionModel_Alzheimer_Logistic regression.ipynb - Data fetching, data cleansing, and model export<br>
-final_model.pkl - Final Model pkl file <br>
-column_names.pkl - Input features pkl file<br>
-Flask_api_model_deployment.py - Flask API to predict the model <br>
-UI_Predict.html - HTML Code to give inputs and predict the value. 
+1. Open "Supervised_RegressionModel_Alzheimer_Logistic regression.ipynb" for data fetching, data cleansing, and model exports.<br>
+2. Input the OASIS Dataset from [Kaggle]( https://www.kaggle.com/code/ahmedghobashi/detecting-early-alzheimer-s/input) after downloading it onto your machine.
+3. Output files: final_model.pkl - Final Model pkl file, column_names.pkl - Input features pkl file.<br>
+4. Run the flask file "Flask_api_model_deployment.py" for the UI screen. <br>
+5. "UI_Predict.html" is the HTML Code that allows users to input values. The predicted values will be the results.
 
 ## Convolutional Neural Network
 
 Next we explored supplementary image processing techniques using an OASIS MRI dataset. Our objective was to create a Convolutional Neural Network with 1 hidden layer that could determine if a new image of a MRI scan could lead to the diagnosis of Alzheimer's disease. We used the Rectified Linear Unit (ReLU) for the Activation function for the Input and hidden layers and used Softmax Activation. Images were organized on Google Drive and catagorized into three classes: Moderate Demented, Mild Demented, and Very Mild Demented.  
 
 The MRI dataset of patients diagnosed with Alzheimer's can be found [here.](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset)
-
-* Select the folder called "OASIS_MRI_Image_Processing". The file "alzheimer-detection-and-classification-oasis-data.ipynb" will run the code.
-* Request access to [Google Drive folder](https://drive.google.com/drive/folders/1BM7i7OU4pHrukjwFYiMMQL0WyNlAlK0q?usp=drive_link) for images.
 
 The data was prepared in two different ways: <br>
 1. Alzheimer Detection: Predict whether the patient has Alzheimer's disease or not (non vs all other categories). <br>
@@ -88,11 +85,15 @@ Testing and Analysis:
 * Initial accuracy was 74%.
 * Considerations: MRI scans can be costly to run. It can be difficult to explain neural networks because there are many parameters.
 
+## How to run the model:<br>
+
+1. Download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
+2. Select the folder called "OASIS_MRI_Image_Processing".
+3. The file "alzheimer-detection-and-classification-oasis-data- New.ipynb" will run the code.
+
 ## Colored MRI Image Proccessing
 
 Next we used supervised learning (SVM) to process colored images of [MRI scans](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) which can be downloaded and organized onto your machine. We tried to use the images to predict Alzheimer or Non Alzheimer (Binary prediction). 
-
-* Select the folder called "SVM_MRI_Image_processing_Model". The file "alzheimer-detection-and-classification-98-7-acc.ipynb" will run the code.
 
 We tried the SVM Model with different kernels and we found that SVM with Linear Kernel was the most accurate model:<br>
 
@@ -108,7 +109,26 @@ RBF Kernel: <br>
 
 Considerations: This is the most expensive model to run.
 
-## Fourth Approach
+## How to run the model:<br>
+
+1. Download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
+2. Select the folder called "SVM_MRI_Image_processing_Model". 
+3. The file "alzheimer-detection-and-classification-98-7-acc.ipynb" will run the code.
+
+## Predicting Types of Alzheimer's Disease
+
+Lastly, we used the same SVM model from the previous approach in order to predict different types of Alzheimer's disease. 
+
+## How to run the model:<br>
+
+1. If you haven't already, download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
+2. Select the folder called "SVM_MRI_Image_processing_Model". 
+3. The file "alzheimer-detection-and-classification-98-7-acc.ipynb" will run the code.
+4. The Alzheimer types code is towards the end of the file under the header "SVM Model for different Alzheimer category".<br>
+
+The final accuracy scores were quite high here also: <br>
+Train Accuracy : 1.0 <br>
+Test Accuracy : 0.98671875
 
 ## Conclusions
 	
