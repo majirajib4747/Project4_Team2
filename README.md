@@ -96,15 +96,15 @@ Next we used supervised learning (SVM) to process colored images of [MRI scans](
 
 We tried the SVM Model with different kernels and we found that SVM with Linear Kernel was the most accurate model:<br>
 
-![linear](./Images/linearkernel.png)
+![linear](Images/linearkernel.png)
 
 SMV with Poly Kernel (Degree 2): <br>
 
-![poly](./Images/polykernel.png)
+![poly](Images/polykernel.png)
 
 RBF Kernel: <br>
 
-![rbf](./Images/rbfkernel.png)
+![rbf](Images/rbfkernel.png)
 
 Considerations: This is the most expensive model to run.
 
