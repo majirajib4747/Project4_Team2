@@ -56,7 +56,7 @@ Among these models Logistic Regression is best Model. This would be the most cos
 
 **Modules and description:**<br>
 
-Supervised_RegressionModel_Alzheimer_Logistic regression.ipynb - Doing data fetch , data cleansing and model export<br>
+Supervised_RegressionModel_Alzheimer_Logistic regression.ipynb - Data fetching, data cleansing, and model export<br>
 final_model.pkl - Final Model pkl file <br>
 column_names.pkl - Input features pkl file<br>
 Flask_api_model_deployment.py - Flask API to predict the model <br>
@@ -96,15 +96,15 @@ Next we used supervised learning (SVM) to process colored images of [MRI scans](
 
 We tried the SVM Model with different kernels and we found that SVM with Linear Kernel was the most accurate model:<br>
 
-![linear](Images/linearkernel.png)
+![linear](Images/linearkernel.PNG)
 
 SMV with Poly Kernel (Degree 2): <br>
 
-![poly](Images/polykernel.png)
+![poly](Images/polykernel.PNG)
 
 RBF Kernel: <br>
 
-![rbf](Images/rbfkernel.png)
+![rbf](Images/rbfkernel.PNG)
 
 Considerations: This is the most expensive model to run.
 
