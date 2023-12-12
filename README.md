@@ -64,7 +64,7 @@ Among these models Logistic Regression is best Model. This would be the most cos
 
 ## Convolutional Neural Network
 
-Next we explored supplementary image processing techniques using an OASIS MRI dataset. Our objective was to create a Convolutional Neural Network with 1 hidden layer that could determine if a new image of a MRI scan could lead to the diagnosis of Alzheimer's disease. We used the Rectified Linear Unit (ReLU) for the Activation function for the Input and hidden layers and used Softmax Activation. Images were organized on Google Drive and catagorized into three classes: Moderate Demented, Mild Demented, and Very Mild Demented.  
+Next we explored supplementary image processing techniques using an OASIS MRI dataset. Our objective was to create a Convolutional Neural Network starting with 6 hidden layers and ending with 14 ones that could determine if a new image of a MRI scan could lead to the diagnosis of Alzheimer's disease. We used the Rectified Linear Unit (ReLU) for the Activation function for the Input and hidden layers and used Softmax Activation. Images were organized on Google Drive and catagorized into three classes: Moderate Demented, Mild Demented, and Very Mild Demented.  
 
 The MRI dataset of patients diagnosed with Alzheimer's can be found [here.](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset)
 
@@ -72,7 +72,7 @@ Testing and Analysis:
 * There were 1.36 GB of MRI images.
 * Preprocessing and loading of images was done for each category. 
 * Data was trained, tested, one hot encoded, and a CNN model was created. 
-* Initial accuracy was 74%.
+* Initial accuracy was 74% and improved to 85% as the hidden layers increased. 
 * Considerations: MRI scans can be costly to run. It can be difficult to explain neural networks because there are many parameters.
 
 ### How to run the model:<br>
