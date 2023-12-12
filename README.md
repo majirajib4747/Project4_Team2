@@ -4,7 +4,7 @@ Group Members: Rajib Maji, Hannah Whang, Michael Cariello, Theresa Bravo, Arame 
 
 ## Alzheimer's Disease Detection and Comparison Between Different Models
 
-Our goal was to employ machine learning techniques to predict the likelihood of an individual receiving a diagnosis of Alzheimer's disease. Our approach involved utilizing datasets containing medical data and patient details to create and train predictive models for patient diagnosis. Our project sought to contribute to the advancement of predictive analytics in healthcare, particularly in the early diagnosis and intervention of Alzheimer's disease.
+Our goal was to employ machine learning techniques to predict the likelihood of an individual receiving a diagnosis of Alzheimer's disease. Our approach involved utilizing datasets containing medical data and patient details to create and train predictive models for patient diagnosis. We utilized OASIS (Open Access Series of Imaging Studies) datasets. More information on this project can be found [here](https://www.oasis-brains.org/#data).
 
 ## Questions to Consider:
 
@@ -16,7 +16,7 @@ Our goal was to employ machine learning techniques to predict the likelihood of 
 
 ## Early Detection of Alzheimer's Disease 
 
-First, we tried to find out whether any early detection is feasible for Alzheimer's disease. We had used an OASIS Dataset from [Kaggle]( https://www.kaggle.com/code/ahmedghobashi/detecting-early-alzheimer-s/input) and did required data cleansing. The features from this dataset were as follows:
+First, we tried to find out whether any early detection is feasible for Alzheimer's disease. We had used an OASIS Dataset from [Kaggle]( https://www.kaggle.com/code/ahmedghobashi/detecting-early-alzheimer-s/input) and did required data cleansing. There were 373 rows of data. The features from this dataset were as follows:
 
 | Feature Descriptions  |
 |---|
@@ -54,7 +54,7 @@ After analysis and research we tried to find which features have direct correlat
 
 Among these models Logistic Regression is best Model. This would be the most cost effective model to run for patient diagnosis in early stages of the disease. Early detection is more desireable so that the patients and their families can be prepared for exploring more potential clinical options. Lastly, we had built a simple UI to predict the Alzheimer probality based on the questionnaire. 
 
-## How to run the model:<br>
+### How to run the model:<br>
 
 1. Open "Supervised_RegressionModel_Alzheimer_Logistic regression.ipynb" for data fetching, data cleansing, and model exports.<br>
 2. Input the OASIS Dataset from [Kaggle]( https://www.kaggle.com/code/ahmedghobashi/detecting-early-alzheimer-s/input) after downloading it onto your machine.
@@ -69,20 +69,20 @@ Next we explored supplementary image processing techniques using an OASIS MRI da
 The MRI dataset of patients diagnosed with Alzheimer's can be found [here.](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset)
 
 Testing and Analysis: 
-* Images were resized to 256 x 256.
+* There were 1.36 GB of MRI images.
 * Preprocessing and loading of images was done for each category. 
 * Data was trained, tested, one hot encoded, and a CNN model was created. 
 * Initial accuracy was 74%.
 * Considerations: MRI scans can be costly to run. It can be difficult to explain neural networks because there are many parameters.
 
-## How to run the model:<br>
+### How to run the model:<br>
 
 1. Request access to the [Google Drive folder](https://drive.google.com/drive/folders/1BM7i7OU4pHrukjwFYiMMQL0WyNlAlK0q?usp=drive_link) containing the images and specify the folder which it is stored on your machine in the code.
 2. Select the file called "Alzheimer(OAISIS)_CNN_3categories.ipynb" to run the code.
 
 ## MRI Image Proccessing
 
-Next we used supervised learning (SVM) to process colored images of [MRI scans](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) which can be downloaded and organized onto your machine. We tried to use the images to predict Alzheimer or Non Alzheimer (Binary prediction). 
+Next we used supervised learning (SVM) to process 6400 colored images of [MRI scans](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) which can be downloaded and organized onto your machine. We tried to use the images to predict Alzheimer or Non Alzheimer (Binary prediction). 
 
 The data was prepared in two different ways: <br>
 1. Alzheimer Detection: Predict whether the patient has Alzheimer's disease or not (non vs all other categories). <br>
@@ -108,26 +108,44 @@ RBF Kernel: <br>
 
 Considerations: This is the most expensive model to run.
 
-## How to run the model:<br>
+### How to run the model:<br>
 
 1. Download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
-2. Select the folder called "SVM_MRI_Image_processing_Model". 
-3. The file "alzheimer-detection-and-classification-98-7-acc.ipynb" will run the code.
+2. Select the folder called "OASIS_MRI_Image_Processing".
+3. The file "alzheimer-detection-and-classification-oasis-data - New.ipynb" will run the code.
 
 ## Predicting Types of Alzheimer's Disease
 
-Lastly, we used the same SVM model from the previous approach in order to predict different types of Alzheimer's disease. 
+Next, we used the same SVM model from the previous approach in order to predict different types of Alzheimer's disease. 
 
-## How to run the model:<br>
+### How to run the model:<br>
 
 1. Download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
 2. Select the folder called "SVM_MRI_Image_processing_Model". 
 3. The file "alzheimer-detection-and-classification-98-7-acc.ipynb" will run the code.
-4. The Alzheimer types code is towards the end of the file under the header "SVM Model for different Alzheimer category".<br>
+4. The Alzheimer types code is towards the end of the file under the header "SVM Model for different Alzheimer category".
+5. Data will be loaded from the "Dataset" folder using this code: <br>
+![directory code](Images/data_directory.PNG)
+ <br>
 
 The final accuracy scores were quite high here also: <br>
 Train Accuracy : 1.0 <br>
 Test Accuracy : 0.98671875
+
+## OASIS cross-sectional data with Logistic Regression, CNN, and SVM.
+
+Here we evaluated cross-sectional MRI images. Data was imported as a csv file then cleaned. Logistic Regression, CNN, and SVM models were created and evaluated.
+
+The Logistic regression model assessed the number demented vs nondemented scans. <br>
+![cross sectional log](Images/cross_sec_log.PNG)<br>
+
+Next, we evaluated the cross-sectional data using CNN and SVM. We used these models to predict three different classes: mild demetia, moderate dementia, and very mild demetia. <br>
+![cross sectional cnn svm](Images/cross_sec_cnn_svm.PNG) <br>
+
+### How to run the model:<br>
+
+1. Select the file "Alzheimer_detection.ipynb". 
+2. Load MRI data and update path.
 
 ## Conclusions
 	
