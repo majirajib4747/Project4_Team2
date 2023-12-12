@@ -68,16 +68,6 @@ Next we explored supplementary image processing techniques using an OASIS MRI da
 
 The MRI dataset of patients diagnosed with Alzheimer's can be found [here.](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset)
 
-The data was prepared in two different ways: <br>
-1. Alzheimer Detection: Predict whether the patient has Alzheimer's disease or not (non vs all other categories). <br>
-2. Alzheimer Classifier: Define what stage the patient is in the Alzheimer category.
-
-The models that are going to be tested:
-* PCA for Alzheimer Detection
-* LDA for Alzheimer Detection
-* SVM for Alzheimer Detection and Alzheimer Classifier
-* CNN for Alzheimer Detection(VGG16) and Alzheimer Classifierb (EfficientNetB0)
-
 Testing and Analysis: 
 * Images were resized to 256 x 256.
 * Preprocessing and loading of images was done for each category. 
@@ -87,13 +77,22 @@ Testing and Analysis:
 
 ## How to run the model:<br>
 
-1. Download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
-2. Select the folder called "OASIS_MRI_Image_Processing".
-3. The file "alzheimer-detection-and-classification-oasis-data- New.ipynb" will run the code.
+1. Request access to the [Google Drive folder](https://drive.google.com/drive/folders/1BM7i7OU4pHrukjwFYiMMQL0WyNlAlK0q?usp=drive_link) containing the images and specify the folder which it is stored on your machine in the code.
+2. Select the file called "Alzheimer(OAISIS)_CNN_3categories.ipynb" to run the code.
 
-## Colored MRI Image Proccessing
+## MRI Image Proccessing
 
 Next we used supervised learning (SVM) to process colored images of [MRI scans](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) which can be downloaded and organized onto your machine. We tried to use the images to predict Alzheimer or Non Alzheimer (Binary prediction). 
+
+The data was prepared in two different ways: <br>
+1. Alzheimer Detection: Predict whether the patient has Alzheimer's disease or not (non vs all other categories). <br>
+2. Alzheimer Classifier: Define what stage the patient is in the Alzheimer category.
+
+The models that are going to be tested:
+* PCA for Alzheimer Detection
+* LDA for Alzheimer Detection
+* SVM for Alzheimer Detection and Alzheimer Classifier
+* CNN for Alzheimer Detection(VGG16) and Alzheimer Classifierb (EfficientNetB0)
 
 We tried the SVM Model with different kernels and we found that SVM with Linear Kernel was the most accurate model:<br>
 
@@ -121,7 +120,7 @@ Lastly, we used the same SVM model from the previous approach in order to predic
 
 ## How to run the model:<br>
 
-1. If you haven't already, download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
+1. Download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
 2. Select the folder called "SVM_MRI_Image_processing_Model". 
 3. The file "alzheimer-detection-and-classification-98-7-acc.ipynb" will run the code.
 4. The Alzheimer types code is towards the end of the file under the header "SVM Model for different Alzheimer category".<br>
