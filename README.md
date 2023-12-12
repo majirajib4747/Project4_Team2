@@ -139,7 +139,7 @@ Here we evaluated cross-sectional MRI images. Data was imported as a csv file th
 The Logistic regression model assessed the number demented vs nondemented scans. <br>
 ![cross sectional log](Images/cross_sec_log.PNG)<br>
 
-Next, we evaluated the cross-sectional data using CNN and SVM. We used these models to predict three different classes: mild demetia, moderate dementia, and very mild demetia. <br>
+Next, we evaluated the cross-sectional data using CNN and SVM. We used CNN model to predict three different classes: mild demetia, moderate dementia, and very mild demetia. <br>
 ![cross sectional cnn svm](Images/cross_sec_cnn_svm.PNG) <br>
 
 ### How to run the model:<br>
