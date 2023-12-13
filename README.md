@@ -82,7 +82,7 @@ Testing and Analysis:
 
 ## MRI Image Proccessing
 
-Next we used supervised learning (SVM) to process 6400 colored images of [MRI scans](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) which can be downloaded and organized onto your machine. We tried to use the images to predict Alzheimer or Non Alzheimer (Binary prediction). 
+Next we used supervised learning (SVM) to process 6400 colored images of [MRI scans](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) which can be downloaded and organized onto your machine. We tried to use the images to predict: Alzheimer or Non Alzheimer (Binary prediction). 
 
 The data was prepared in two different ways: <br>
 1. Alzheimer Detection: Predict whether the patient has Alzheimer's disease or not (non vs all other categories). <br>
@@ -92,7 +92,27 @@ The models that are going to be tested:
 * PCA for Alzheimer Detection
 * LDA for Alzheimer Detection
 * SVM for Alzheimer Detection and Alzheimer Classifier
-* CNN for Alzheimer Detection(VGG16) and Alzheimer Classifierb (EfficientNetB0)
+* CNN for Alzheimer Detection(VGG16) and Alzheimer Classifier (EfficientNetB0)
+
+### Predicting Types of Alzheimer's Disease
+
+We used a SVM model from in order to predict different types of Alzheimer's disease. 
+
+### How to run the model:<br>
+
+1. Download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
+2. Select the folder called "SVM_MRI_Image_processing_Model". 
+3. The file "alzheimer-detection-and-classification-98-7-acc.ipynb" will run the code.
+4. The Alzheimer types code is towards the end of the file under the header "SVM Model for different Alzheimer category".
+5. Data will be loaded from the "Dataset" folder using this code: <br>
+![directory code](Images/data_directory.PNG)
+ <br>
+
+The final accuracy scores were quite high here also: <br>
+Train Accuracy : 1.0 <br>
+Test Accuracy : 0.98671875
+
+### SVM Model Analysis using different Kernels
 
 We tried the SVM Model with different kernels and we found that SVM with Linear Kernel was the most accurate model:<br>
 
@@ -114,23 +134,6 @@ Considerations: This is the most expensive model to run.
 2. Select the folder called "OASIS_MRI_Image_Processing".
 3. The file "alzheimer-detection-and-classification-oasis-data - New.ipynb" will run the code.
 
-## Predicting Types of Alzheimer's Disease
-
-Next, we used the same SVM model from the previous approach in order to predict different types of Alzheimer's disease. 
-
-### How to run the model:<br>
-
-1. Download the Image files from the [OASIS Dataset on Kaggle](https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset/data) and specify the folder which it is stored on your machine in the code.
-2. Select the folder called "SVM_MRI_Image_processing_Model". 
-3. The file "alzheimer-detection-and-classification-98-7-acc.ipynb" will run the code.
-4. The Alzheimer types code is towards the end of the file under the header "SVM Model for different Alzheimer category".
-5. Data will be loaded from the "Dataset" folder using this code: <br>
-![directory code](Images/data_directory.PNG)
- <br>
-
-The final accuracy scores were quite high here also: <br>
-Train Accuracy : 1.0 <br>
-Test Accuracy : 0.98671875
 
 ## OASIS cross-sectional data with Logistic Regression, CNN, and SVM.
 
@@ -149,7 +152,9 @@ Next, we evaluated the cross-sectional data using CNN and SVM. We used CNN model
 
 ## Conclusions
 	
-**add here later!**
+* The Logistic Regression model was the most accurate model using the OASIS Questionnaire dataset (373 rows of data).
+* Using a convolutional neural network to predict whether a MRI image would lead to an Alzheimer diagnosis, initial accuracy was 74% and improved to 85% as the hidden layers increased.
+* We saw that the Linear kernel was the most accurate model using the Aslheimer MRI Preprocessed Dataset (6400 MRI Images).
 
 
 ## Difficulties
